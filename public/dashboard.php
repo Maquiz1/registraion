@@ -45,7 +45,7 @@
       <div class="card-body">
         <h5 class="card-title">New Orders</h5>
         <p class="card-text">Here You Can make new Orders.</p>
-        <a href="#" class="btn btn-primary">New Order</a>
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#order">New Order</a>
       </div>
     </div>
                 </div>
@@ -64,7 +64,7 @@
       <div class="card-body">
         <h5 class="card-title">Categories</h5>
         <p class="card-text">Here You Can manage  and Add Categorires.</p>
-        <a href="#" class="btn btn-primary">Add </a>
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#category">Add </a>
         <a href="#" class="btn btn-primary">Manage</a>
       </div>
     </div>
@@ -74,7 +74,7 @@
       <div class="card-body">
       <h5 class="card-title">Brands</h5>
         <p class="card-text">Here You Can manage  and Add Brand.</p>
-        <a href="#" class="btn btn-primary">Add </a>
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#brand">Add</a>
         <a href="#" class="btn btn-primary">Manage</a>
       </div>
     </div>
@@ -84,7 +84,7 @@
       <div class="card-body">
       <h5 class="card-title">Products</h5>
         <p class="card-text">Here You Can manage and Add Products.</p>
-        <a href="#" class="btn btn-primary">Add </a>
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#product">Add </a>
         <a href="#" class="btn btn-primary">Manage</a>
       </div>
     </div>
@@ -92,5 +92,17 @@
   </div>
 </div>
 
+<!-- Include Category modal here  -->
+<?php
+   include_once 'templates/category.php';
+?>
+<!-- Include Category modal here  -->
+<?php
+   include_once 'templates/brand.php';
+?>
+<!-- Include Category modal here  -->
+<?php
+   include_once 'templates/product.php';
+?>
 </body>
 </html>
