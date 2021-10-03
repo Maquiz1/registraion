@@ -1,12 +1,12 @@
 <?php
-    // include_once 'constants.php'; 
+    include_once 'constants.php'; 
 
     class Database{
 
-        private $dsn = "mysql:host=localhost;dbname=ims";
-        private $dbuser = "root";
-        private $dbpass = "Data@2020";
-        private $conn;
+        private $dsn = DB_HOST;
+        private $dbuser = DB_USER;
+        private $dbpass = DB_PASS;
+        protected $conn;
 
         public function __construct(){
 
