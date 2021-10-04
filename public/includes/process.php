@@ -2,6 +2,7 @@
     include_once '../database/constants.php';
     include_once 'user.php';
     include_once 'DBOperation.php';
+    include_once 'manage.php';
 
     //FOR REGISTRATION
     if(isset($_POST['username']) && isset($_POST['email'])){
@@ -57,6 +58,55 @@
 
         echo $result;
         exit();
+    }
+
+
+    //MANAGE CATEGORY
+    if(isset($_POST["manageCategory"])){
+        $m = new Manage();
+        $result = $m->manageRecordWithPagination("categories",$_POST["pageno"]);
+        $rows = $result["rows"];
+        $pagination = $result["pagination"];
+        $num = $result["count"];
+        if($num > 0){
+
+            $n = 0;
+            foreach($rows as $row){           
+
+
+
+    ?>
+                <tr>
+
+                <td scope="row"><?php echo ++$n; ?></td>
+                <td><?php echo $row["category"]; ?></td>
+                <td><?php echo $row["parent"]; ?></td>
+                <td>
+                    <a href="#" did="<?php echo ++$n; ?>" class="btn btn-success btn-sm">Active</a>
+                </td>
+                <td>
+                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="#" class="btn btn-info btn-sm">Edit</a>
+                </td>
+                </tr>
+    
+
+
+
+<?php
+
+
+            }
+
+            ?>
+
+           <tr><td colspan="5"><?php echo $pagination; ?><td></tr> 
+
+            <?php
+            exit();
+        }
+
+
     }
 
     // CATEGORY ENDS HERE 

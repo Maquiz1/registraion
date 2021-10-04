@@ -78,15 +78,16 @@
             //LIMIT 20,10
             $limit = "LIMIT ".($pageno - 1) * $numberOfRecordsPerPage.",".$numberOfRecordsPerPage;
 
-            return $pagination;
+            // return $pagination;
 
-            // return ["pagination"=>$pagination,"limit"=>$limit];
+            return ["pagination"=>$pagination,"limit"=>$limit];
 
         }
 
 
-        public function test($array = [],$table){
+        public function test($array,$table){
             $query = $this->conn->query("SELECT * FROM ".$table." ".$array["limit"]);
+            // $query = $this->conn->query("SELECT * FROM ".$table);
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         }
@@ -119,22 +120,22 @@
         // echo "<pre>";
         $result = $db->test($array,$table);
         echo "<pre>";
-        print_r($result);
+        // print_r($result);
 
         foreach($result as $row){
             // foreach($row as $data){
-                echo "<pre>";
-                // print_r($row);
+                // echo "<pre>";
+                // print_r($row['pid']);
+                // echo "<div ='margin:0 auto;font-size:20px;'><b></b>".$row."</div>";
             // }
         }
 
         // while($row = $result){
-        //     echo "<div ='margin:0 auto;font-size:20px;'><b>".$row["pid"]."</b>".$row["cid"]."</div>";
+        //     echo "<div ='margin:0 auto;font-size:20px;'><b></b>".$row["cid"]."</div>";
         // }
 
-        // echo $array["pagination"];
-
-       
+        print_r($array["pagination"]);
+   
     }
 
 ?>

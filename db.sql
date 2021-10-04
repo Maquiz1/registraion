@@ -12,3 +12,12 @@ CREATE TABLE products(
     FOREIGN KEY(cid) REFERENCES categories(cid),
     FOREIGN KEY(bid) REFERENCES brands(bid)
 );
+
+
+
+SELECT p.`category_name` 
+as child,c.`category_name` 
+as parent,p.`status` 
+FROM categories p 
+LEFT JOIN categories c 
+ON p.parent_cat=c.cid
